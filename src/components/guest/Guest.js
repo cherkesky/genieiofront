@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export class Navbar extends Component {
+export class Guest extends Component {
   render() {
     return (
       <div>
-        <h1>Navbar</h1>
+        <h1>Guest</h1>
       </div>
     )
   }
 }
 
-export default Navbar
+export default Guest
