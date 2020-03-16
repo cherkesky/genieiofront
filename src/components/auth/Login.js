@@ -23,7 +23,7 @@ class Login extends Component {
         }
 
         this.props.loginUser(credentials)
-            .then(() => this.props.history.push("/"))
+            .then(() => this.props.history.push("/home"))
     }
 
     render() {

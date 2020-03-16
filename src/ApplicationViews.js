@@ -4,6 +4,7 @@ import Welcome from "./components/welcome/Welcome"
 import Login from "./components/auth/Login"
 import Register from "./components/auth/Register"
 import Guest from "./components/guest/Guest"
+import Home from "./components/home/Home"
 
 export class ApplicationViews extends Component {
   render() {
@@ -27,6 +28,11 @@ export class ApplicationViews extends Component {
         }} />
         <Route exact path="/guest" render={(props) => {
           return <Guest
+            {...props}
+            {...this.props} />
+        }} />
+         <Route exact path="/home" render={(props) => {
+          return <Home
             {...props}
             {...this.props} />
         }} />

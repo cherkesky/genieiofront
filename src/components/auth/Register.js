@@ -7,7 +7,7 @@ class Register extends Component {
         userName: "",
         firstName: "",
         lastName: "",
-        address: "",
+        cid: "",
         password: "",
         verifyPassword: ""
     }
@@ -26,7 +26,7 @@ class Register extends Component {
             "username": this.state.userName,
             "first_name": this.state.firstName,
             "last_name": this.state.lastName,
-            "address": this.state.address,
+            "cid": this.state.cid,
             "email": this.state.email,
             "password": this.state.password
         }
@@ -34,7 +34,7 @@ class Register extends Component {
         // Makes a fetch call with newUser object as the body of the POST request
         this.props.registerUser(newUser)
             .then((response) => console.log("res in reg", response))
-            .then(() => this.props.history.push("/"))
+            .then(() => this.props.history.push("/home"))
     }
 
     render() {
@@ -71,11 +71,11 @@ class Register extends Component {
                 <fieldset>
                     {/* <label htmlFor="location"> location </label> */}
                     <input onChange={this.handleInputChange}
-                        id="address"
+                        id="cid"
                         type="text"
-                        name="address"
+                        name="cid"
                         className="form-control"
-                        placeholder="Location"
+                        placeholder="Phone"
                         required />
                 </fieldset>
                 <fieldset>
