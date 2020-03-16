@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from "react-router-dom"
 import NavBar from './nav/Navbar'
 import ApplicationViews from '../ApplicationViews'
 
@@ -59,8 +60,8 @@ export class GenieIO extends Component {
   }
 
   logoutUser = () => {
-    //clears user from localStorage and redirects to home page
-    this.props.clearUser();
+    //clears user from localStorage and redirects to welcome page
+    sessionStorage.removeItem("genieio_token")
     this.props.history.push('/');
   }
   render() {
@@ -68,16 +69,16 @@ export class GenieIO extends Component {
       <>
           <NavBar
           isAuthenticated={this.isAuthenticated} 
+          logoutUser={this.logoutUser}
           />
           <ApplicationViews
           isAuthenticated={this.isAuthenticated}
           registerUser={this.registerUser}
           loginUser={this.loginUser}
-          logoutUser={this.logoutUser}
           />
       </>
     )
   }
 }
 
-export default GenieIO
+export default withRouter(GenieIO)
