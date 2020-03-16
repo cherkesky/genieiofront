@@ -7,8 +7,8 @@ export class GenieIO extends Component {
 
   state = {
     user: false,
-    search: "",
-    searchResults: []
+    // search: "",
+    // searchResults: []
     
   }
 
