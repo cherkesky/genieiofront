@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from './nav/Navbar'
 import ApplicationViews from '../ApplicationViews'
-import APIManager from '../modules/APIManager'
 
 export class GenieIO extends Component {
 
