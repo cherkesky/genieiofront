@@ -9,8 +9,9 @@ import Button from '@material-ui/core/Button';
 export class Navbar extends Component {
   render() {
     return (
+      this.props.isAuthenticated()
+      ?
       <div>
-
         <AppBar position="static" color="secondary" style={{ background: '#3E3E3E' }}>
           <Toolbar>
             <IconButton edge="start" color="inherit" aria-label="menu">
@@ -33,6 +34,7 @@ export class Navbar extends Component {
           </Toolbar>
         </AppBar>
       </div>
+      :null
     )
   }
 }

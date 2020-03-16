@@ -12,7 +12,7 @@ export class GenieIO extends Component {
   }
 
   isAuthenticated = () => {
-    return sessionStorage.getItem("genieio") !== null
+    return sessionStorage.getItem("genieio_token") !== null
   }
 
   registerUser = (userInfo) => {
