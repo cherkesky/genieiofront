@@ -18,7 +18,7 @@ export class LatestWishes extends Component {
   render() {
     return (
       <>
-        <h1>Latest Wishes</h1>
+        <h3>Latest Wishes</h3>
         {this.state.wishes.map((wishes) => 
         <LatestWishesItem
          key={wishes.id} 

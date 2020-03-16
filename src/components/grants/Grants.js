@@ -2,12 +2,22 @@ import React, { Component } from 'react'
 import APIManager from '../../modules/APIManager';
 import LatestWishes from './LatestWishes'
 import SearchResults from './SearchResults'
+import Button from '@material-ui/core/Button'
+
 export class Grants extends Component {
 
   state = {
     search: "",
-    searchResults: []
+    searchResults: [],
+    chosenGrant: 0,
+  }
 
+
+  chooseGrant = (id) => {
+    this.setState({ 
+      chosenGrant: id
+     })
+    
   }
 
   handleInputChange = (evt) => {
@@ -26,6 +36,8 @@ export class Grants extends Component {
   }
 
   render() {
+    const isEnabled = this.state.chosenGrant !== 0
+
     return (
       <>
         <h1>Grants</h1>
@@ -38,10 +50,18 @@ export class Grants extends Component {
             <SearchResults
               key={searchResults.id}
               wishes={searchResults}
+              chooseGrant={this.chooseGrant}
               {...this.props} />)
 
-          : <LatestWishes {...this.props} />
+          : <LatestWishes
+            chooseGrant={this.chooseGrant}
+            {...this.props} />
         }
+
+        <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }}  disabled={!isEnabled} onClick={() => {
+          console.log("Grant wish #", this.state.chosenGrant)
+        }}>Grant</Button>
+
       </>
     )
   }

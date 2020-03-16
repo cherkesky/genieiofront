@@ -30,7 +30,7 @@ export class Navbar extends Component {
             <Button color="inherit" onClick={() => {
               this.props.history.push("/inbox")
             }}>Inbox</Button>
-            <Button color="inherit" onClick={() => {
+            <Button color="default" onClick={() => {
               this.props.logoutUser()
             }}>Logout</Button>
 
