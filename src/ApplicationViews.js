@@ -7,6 +7,7 @@ import Guest from "./components/guest/Guest"
 import Home from "./components/home/Home"
 import Wishes from "./components/wishes/Wishes"
 import Grants from "./components/grants/Grants"
+import GrantMemo from "./components/grants/GrantMemo"
 import Status from "./components/status/Status"
 import Inbox from "./components/inbox/Inbox"
 
@@ -47,6 +48,11 @@ export class ApplicationViews extends Component {
         }} />
            <Route exact path="/grants" render={(props) => {
           return <Grants
+            {...props}
+            {...this.props} />
+        }} />
+         <Route exact path="/grantmemo" render={(props) => {
+          return <GrantMemo
             {...props}
             {...this.props} />
         }} />

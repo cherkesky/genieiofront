@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Logo from '../../assets/logo.png';
-import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button'
 
 export class Welcome extends Component {
   render() {
