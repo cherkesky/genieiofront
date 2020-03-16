@@ -4,7 +4,7 @@ export class SearchResults extends Component {
   render() {
     return (
       <>
-      <h3>Search Results</h3>
+      {/* <h3>Search Results</h3> */}
       <p onClick={()=>{
         this.props.chooseGrant(this.props.wishes.id)
         }}>

@@ -44,7 +44,6 @@ export class Wishes extends Component {
         onChange={this.handleFieldChange}
       />
       <hr />
-      
 
       <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }} onClick={() => {
 

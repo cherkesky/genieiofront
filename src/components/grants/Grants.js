@@ -72,7 +72,11 @@ export class Grants extends Component {
             {...this.props} />
         }
 
-        <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }}  disabled={!isEnabled} onClick={() => {
+        <Button variant="contained" 
+        color="secondary" 
+        style={{ background: '#DC42CC' }} 
+        disabled={!isEnabled} 
+        onClick={() => {
           this.grantWish(this.state.chosenGrant)
         }}>Grant</Button>
 
