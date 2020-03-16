@@ -3,6 +3,7 @@ import APIManager from '../../modules/APIManager';
 import LatestWishes from './LatestWishes'
 import SearchResults from './SearchResults'
 import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
 
 export class Grants extends Component {
 
@@ -18,6 +19,16 @@ export class Grants extends Component {
       chosenGrant: id
      })
     
+  }
+
+  grantWish = (id) =>{
+    console.log("Grant wish #", this.state.chosenGrant)
+    this.props.history.push({
+      pathname: "/grantmemo",
+      state: {
+        chosenGrant: this.state.chosenGrant
+      }
+    })
   }
 
   handleInputChange = (evt) => {
@@ -41,7 +52,10 @@ export class Grants extends Component {
     return (
       <>
         <h1>Grants</h1>
-        <input type="text" id="search" placeholder="Search for wishes to grant..." onChange={(evt) => this.handleInputChange(evt)}></input>
+        <TextField id="search" label="Search for wishes to grant..." 
+        fullWidth
+        type="search" 
+        onChange={(evt) => this.handleInputChange(evt)} />
 
         {/* if search state empty show <LatestWishes/> if not show <SearchResult/> */}
         {this.state.searchResults.length >= 1
@@ -59,7 +73,7 @@ export class Grants extends Component {
         }
 
         <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }}  disabled={!isEnabled} onClick={() => {
-          console.log("Grant wish #", this.state.chosenGrant)
+          this.grantWish(this.state.chosenGrant)
         }}>Grant</Button>
 
       </>
