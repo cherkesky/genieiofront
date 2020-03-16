@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ApiManager from '../../modules/APIManager';
+import APIManager from '../../modules/APIManager';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
@@ -24,7 +24,7 @@ export class Wishes extends Component {
     console.log(newWish)
 
 
-    ApiManager.post("wishes",newWish)
+    APIManager.post("wishes",newWish)
     .then(this.props.history.push("/home"))
   }
   render() {

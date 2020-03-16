@@ -14,10 +14,10 @@ export class Navbar extends Component {
       <div>
         <AppBar position="static" color="secondary" style={{ background: '#3E3E3E' }}>
           <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
+            {/* <IconButton edge="start" color="inherit" aria-label="menu"> */}
               {/* Logo */}
               <img alt="logo" src={require("../../assets/logo.png")} width="180px" height="80px" onClick={() => { this.props.history.push("/home") }}></img>
-            </IconButton>
+            {/* </IconButton> */}
             <Button color="inherit" onClick={() => {
               this.props.history.push("/wishes")
             }}>Wishes</Button>
