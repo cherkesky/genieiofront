@@ -12,17 +12,17 @@ export class GenieIO extends Component {
     
   }
 
-  handleInputChange = (evt) => {
-    let stateToChange = {}
-    stateToChange[evt.target.id] = evt.target.value
-    this.setState(stateToChange)
-    // get from the API
-    APIManager.getAll(`products?search=${this.state.search}`)
-        .then((res) => {
-            this.setState({searchResults: res})
+//   handleInputChange = (evt) => {
+//     let stateToChange = {}
+//     stateToChange[evt.target.id] = evt.target.value
+//     this.setState(stateToChange)
+//     // get from the API
+//     APIManager.getAll(`products?search=${this.state.search}`)
+//         .then((res) => {
+//             this.setState({searchResults: res})
 
-        })
-}
+//         })
+// }
 
   isAuthenticated = () => {
     return sessionStorage.getItem("bangazon_token") !== null
@@ -41,7 +41,7 @@ export class GenieIO extends Component {
       .then(res => res.json())
       .then(res => {
         if ("token" in res) {
-          sessionStorage.setItem("bangazon_token", res.token)
+          sessionStorage.setItem("genieio_token", res.token)
         }
       })
       .then(() => this.setState({
@@ -81,7 +81,6 @@ export class GenieIO extends Component {
       <>
           <NavBar
           isAuthenticated={this.isAuthenticated} 
-          handleInputChange={this.handleInputChange}
           />
           <ApplicationViews
           isAuthenticated={this.isAuthenticated}
