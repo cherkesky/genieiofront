@@ -10,21 +10,23 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <AppBar position="static" color="secondary">
+
+        <AppBar position="static" color="secondary" style={{ background: '#3E3E3E' }}>
           <Toolbar>
-            <IconButton edge="start"  color="inherit" aria-label="menu">
-             GenieIO  {/* Logo placeholder */}
-            </IconButton> 
-            <Button color="inherit" onClick={()=>{
+            <IconButton edge="start" color="inherit" aria-label="menu">
+              {/* Logo */}
+              <img alt="logo" src={require("../../assets/logo.png")} width="180px" height="80px" onClick={() => { this.props.history.push("/home") }}></img>
+            </IconButton>
+            <Button color="inherit" onClick={() => {
               this.props.history.push("/wishes")
             }}>Wishes</Button>
-            <Button color="inherit" onClick={()=>{
+            <Button color="inherit" onClick={() => {
               this.props.history.push("/grants")
             }}>Grants</Button>
-            <Button color="inherit" onClick={()=>{
+            <Button color="inherit" onClick={() => {
               this.props.history.push("/status")
             }}>Status</Button>
-            <Button color="inherit" onClick={()=>{
+            <Button color="inherit" onClick={() => {
               this.props.history.push("/inbox")
             }}>Inbox</Button>
 

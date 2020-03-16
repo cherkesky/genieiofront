@@ -11,20 +11,8 @@ export class GenieIO extends Component {
     
   }
 
-//   handleInputChange = (evt) => {
-//     let stateToChange = {}
-//     stateToChange[evt.target.id] = evt.target.value
-//     this.setState(stateToChange)
-//     // get from the API
-//     APIManager.getAll(`products?search=${this.state.search}`)
-//         .then((res) => {
-//             this.setState({searchResults: res})
-
-//         })
-// }
-
   isAuthenticated = () => {
-    return sessionStorage.getItem("bangazon_token") !== null
+    return sessionStorage.getItem("genieio") !== null
   }
 
   registerUser = (userInfo) => {
