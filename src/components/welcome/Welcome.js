@@ -8,7 +8,7 @@ export class Welcome extends Component {
       <>
         <h1>Welcome</h1>
         <div>
-        <Button variant="contained" color="secondary" onClick={()=>{
+        <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }} onClick={()=>{ 
           this.props.history.push("/login")
         }}>Login </Button>
         <Button variant="contained" color="default" onClick={()=>{
