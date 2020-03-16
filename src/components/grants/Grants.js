@@ -33,8 +33,14 @@ export class Grants extends Component {
 
         {/* if search state empty show <LatestWishes/> if not show <SearchResult/> */}
         {this.state.searchResults.length >= 1
-          ? <SearchResults />
-          : <LatestWishes />
+          ?
+          this.state.searchResults.map((searchResults) =>
+            <SearchResults
+              key={searchResults.id}
+              wishes={searchResults}
+              {...this.props} />)
+
+          : <LatestWishes {...this.props} />
         }
       </>
     )
