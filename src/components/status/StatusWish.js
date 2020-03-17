@@ -1,33 +1,17 @@
 import React, { Component } from 'react'
-import APIManager from '../../modules/APIManager';
-import StatusWishItem from './StatusWishItem'
+// import Table from '@material-ui/core/Table';
+// import TableBody from '@material-ui/core/TableBody';
+// import TableCell from '@material-ui/core/TableCell';
+// import TableContainer from '@material-ui/core/TableContainer';
+// import TableHead from '@material-ui/core/TableHead';
+// import TableRow from '@material-ui/core/TableRow';
+// import Paper from '@material-ui/core/Paper';
+
 export class StatusWish extends Component {
-state={
-  my_wishes:[]
-}
-
-
-componentDidMount(){
-  APIManager.getAll("wishes?my_wishes=id")
-  .then((result) => {
-    this.setState({
-      my_wishes: result
-    })
-  });
-
-
-
-} // closer componentDidMount
-
   render() {
     return (
       <div>
-        <h1>My Wishes</h1>
-        {this.state.my_wishes.map((wishes) => 
-        <StatusWishItem
-         key={wishes.id} 
-         wishes={wishes}
-        {...this.props}/>)}
+        <p>#{this.props.wishes.id} - {this.props.wishes.wish_body}</p>
       </div>
     )
   }
