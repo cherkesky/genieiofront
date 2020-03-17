@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import StatusGrantItem from './StatusGrantItem'
+import StatusGrantItem from './StatusGrantItem'
 import APIManager from '../../modules/APIManager';
 
 export class StatusGrant extends Component {
@@ -15,7 +15,7 @@ state = {
           grant_requests: result
         })
       }) 
-  }, 1000)
+  }, 1500)
    
   }
 
@@ -24,12 +24,12 @@ state = {
       <>
         <h1>Received Grant Requests</h1>   
 
-        {/* {this.props.wishes.map((wishes) => 
+        {this.state.grant_requests.map((grants) => 
         <StatusGrantItem
-         key={wishes.id} 
-         wishes={wishes}
+         key={grants.id} 
+         grants={grants}
         {...this.props}
-        />)}  */}
+        />)} 
       </>
     )
   }
