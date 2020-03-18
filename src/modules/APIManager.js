@@ -44,9 +44,9 @@ export default {
     }).then(result => result.json());
   },
 
-  profile_update(route, editedItem) {
-    return fetch(`${remoteURL}/${route}/profile_update`, {
-      method: "PUT",
+    update(route, editedItem) {
+    return fetch(`${remoteURL}/${route}/${editedItem.id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Token ${sessionStorage.getItem("genieio_token")}`

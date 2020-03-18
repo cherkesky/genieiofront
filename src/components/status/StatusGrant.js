@@ -4,7 +4,18 @@ import APIManager from '../../modules/APIManager';
 
 export class StatusGrant extends Component {
 state = {
-  grant_requests:[]
+  grant_requests:[],
+}
+
+ rerenderer(){
+  setTimeout(()=>{ 
+    APIManager.getAll(`grants?by_wish=id`)
+    .then((result) => {
+      this.setState({
+        grant_requests: result
+      })
+    }) 
+}, 500)
 }
 
   componentDidMount(){
@@ -15,7 +26,7 @@ state = {
           grant_requests: result
         })
       }) 
-  }, 1500)
+  }, 500)
    
   }
 
@@ -28,6 +39,7 @@ state = {
         <StatusGrantItem
          key={grants.id} 
          grants={grants}
+         rerenderer ={this.rerenderer}
         {...this.props}
         />)} 
       </>
