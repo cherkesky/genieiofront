@@ -49,6 +49,7 @@ export class GrantMemo extends Component {
       <>
         <h1>Grant Memo </h1>
         <p>You chose to grant the wish: <b>{this.state.wish_body}</b></p>
+        <p>Please add a personal memo specifying what makes you the right person to grant this wish. </p>
         <TextField
           id="memo"
           label=""
