@@ -7,7 +7,8 @@ state = {
   grant_requests:[],
 }
 
- rerenderer(){
+ rerenderer=()=>{
+  console.log("RERENDERER")
   setTimeout(()=>{ 
     APIManager.getAll(`grants?by_wish=id`)
     .then((result) => {
@@ -15,7 +16,8 @@ state = {
         grant_requests: result
       })
     }) 
-}, 500)
+}, 100)
+ 
 }
 
   componentDidMount(){
@@ -26,7 +28,7 @@ state = {
           grant_requests: result
         })
       }) 
-  }, 500)
+  }, 100)
    
   }
 
