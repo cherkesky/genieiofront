@@ -8,7 +8,6 @@ state = {
 }
 
  rerenderer=()=>{
-  console.log("RERENDERER")
   setTimeout(()=>{ 
     APIManager.getAll(`grants?by_wish=id`)
     .then((result) => {

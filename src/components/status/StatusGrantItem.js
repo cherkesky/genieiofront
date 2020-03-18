@@ -19,9 +19,7 @@ export class StatusGrantItem extends Component {
       const updatedGrant = {
       id: grant.id,
       status: "rejected",
-     
     }
-    console.log(updatedGrant)
     APIManager.update("grants", updatedGrant)
     this.props.rerenderer()
     })
@@ -33,25 +31,21 @@ export class StatusGrantItem extends Component {
       const updatedGrant = {
       id: grant.id,
       status: "approved",
-     
     }
-    console.log(updatedGrant)
     APIManager.update("grants", updatedGrant)
     this.props.rerenderer()
-
     })
   }
 
   render() {
-    console.log("RENDER")
-    return (
+  return (
       <>
       
         <Box component="div" display="inline" p={1} m={1} bgcolor="background.paper">
 
           <b>Memo:</b> {this.props.grants.memo} <b>Status:</b>{this.props.grants.status}
-          {(this.props.grants.status) === 'pending'
 
+          {(this.props.grants.status) === 'pending'
             ?
             <>
               <Button
@@ -76,7 +70,7 @@ export class StatusGrantItem extends Component {
           }
 
         </Box>
-        <br /><br />
+        <br/><br/>
 
       </>
     )
