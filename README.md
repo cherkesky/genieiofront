@@ -1,69 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<img src="https://raw.githubusercontent.com/cherkesky/genieio/master/assets/logo.png" height="200" width="400">
 
+### by Guy Cherkesky | [LinkedIn](http://linkedin.com/in/cherkesky) | [Website](http://cherkesky.com)
+
+
+
+GenieIO is a Full Stack React.js/Django app that connects users who want to make a wish (ex: I want to pass calculus) to users that think they can grant their wishes (ex: I’m a calculus instructor. I think I can help you!). There is a dedicated section for the Wishers to send their wishes and a section for Granters to search for a wish to grant. If a Wisher gets a Grant request they can reject or approve the request. If they choose to approve the request, their contact info will be shared with the Granter.The home page shows a word cloud made from the wish’s keywords. The wishes are processed with NLTK to remove all the stop words and leave only the important keywords for the word cloud. GenieIO also allows users to text wishes from their phones.
+
+
+<img src="https://github.com/cherkesky/GenieIO/blob/master/assets/genie_home.gif" height="400" width="600">
+
+
+## Details
+
+
+#### Technology Stack: 
+Full CRUD functionality
+- JS: Vanilla Javascript, React, Node.JS, Express
+- Python: Vanilla Python, Django
+- Styles: CSS, Material UI, Figma
+- Libraries: NLTK, React WordCloud, Twilio
+- Version Control: Git, Github
+- DB: SQLite3, Mongo.DB
+
+## Running Locally
+- Backend: https://github.com/cherkesky/GenieIO/
+- Frontend: https://github.com/cherkesky/genieiofront
+- SMS Server: https://github.com/cherkesky/genieiosms
+
+Backend (Python, Django):
 In the project directory, you can run:
+### `python manage.py runserver`
 
+Frontend (Javscript, React)
+In the project directory, you can run:
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+SMS text server (Node.JS, Express)
+In the project directory, you can run:
+### `node src/server.js`
+and on a different terminal window, you can run:
+### `twilio phone-numbers:update "+16152355775" --sms-url="http://localhost:1337/sms"`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# genieiofront
+Make a wish!
