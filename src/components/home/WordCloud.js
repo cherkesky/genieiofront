@@ -3,7 +3,7 @@ import { select } from "d3-selection";
 import React from "react";
 import ReactWordcloud from "react-wordcloud";
 
-// import words from "./words";
+import words from "./words";
 
 const getCallback =(callback)=> {
   return function(word, event) {
@@ -37,8 +37,8 @@ export default function WordCloud(props){
   return (
     <>
       <div style={{ height: 650, width: 800, backgroundColor: "#363636" }}>
-        {/* <ReactWordcloud callbacks={callbacks} words={words} /> */}
-        <ReactWordcloud callbacks={callbacks} words={props.word_values} />         
+        <ReactWordcloud callbacks={callbacks} words={words} />
+        {/* <ReactWordcloud callbacks={callbacks} words={props.word_values} />          */}
       </div>
     </>
   )
