@@ -3,9 +3,9 @@ import { select } from "d3-selection";
 import React from "react";
 import ReactWordcloud from "react-wordcloud";
 
-import words from "./words";
+// import words from "./words";
 
-function getCallback(callback) {
+const getCallback =(callback)=> {
   return function(word, event) {
     const isActive = callback !== "onWordMouseOut";
     const element = event.target;
@@ -32,21 +32,14 @@ const callbacks = {
   onWordMouseOver: getCallback("onWordMouseOver")
 };
 
-export default function WordCloud(){
+export default function WordCloud(props){
 
   return (
-    <div>
+    <>
       <div style={{ height: 650, width: 800, backgroundColor: "#363636" }}>
-        <ReactWordcloud callbacks={callbacks} words={words} />
+        {/* <ReactWordcloud callbacks={callbacks} words={words} /> */}
+        <ReactWordcloud callbacks={callbacks} words={props.word_values} />         
       </div>
-    </div>
+    </>
   )
-
 }
-
-  
-
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<App />, rootElement);
-
