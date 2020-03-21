@@ -22,6 +22,7 @@ export class Home extends Component {
       <>
         <WordCloud
         word_values = {this.state.word_values}
+        {...this.props}
         />
       </>
     )
