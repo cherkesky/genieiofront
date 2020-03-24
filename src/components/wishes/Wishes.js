@@ -21,8 +21,6 @@ export class Wishes extends Component {
       category: 1,
       location: 1
     }
-    console.log(newWish)
-
 
     APIManager.post("wishes",newWish)
     .then(this.props.history.push("/home"))
