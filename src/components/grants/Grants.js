@@ -48,6 +48,18 @@ export class Grants extends Component {
     }
   }
 
+componentDidMount(){
+  if ((this.props.location.search)!== undefined){
+    
+    APIManager.getAll(`wishes?search=${this.props.location.search.split("=")[1]}`)
+    .then((res) => {
+      this.setState({ searchResults: res })
+    })
+  }
+}
+// (((this.props.location.search).split("=")[1])!== undefined)
+
+
   render() {
     const isEnabled = this.state.chosenGrant !== 0
 
