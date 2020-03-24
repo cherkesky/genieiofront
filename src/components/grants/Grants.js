@@ -5,6 +5,13 @@ import SearchResults from './SearchResults'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
+import Paper from '@material-ui/core/Paper';
+
 export class Grants extends Component {
 
   state = {
@@ -57,7 +64,6 @@ componentDidMount(){
     })
   }
 }
-// (((this.props.location.search).split("=")[1])!== undefined)
 
 
   render() {
@@ -74,12 +80,25 @@ componentDidMount(){
         {/* if search state empty show <LatestWishes/> if not show <SearchResult/> */}
         {this.state.searchResults.length >= 1
           ?
-          this.state.searchResults.map((searchResults) =>
+          <Paper>
+          <Table stickyHeader={true}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Wish</TableCell>
+                <TableCell align="center">Date</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+            {this.state.searchResults.map((searchResults) =>
             <SearchResults
               key={searchResults.id}
               wishes={searchResults}
               chooseGrant={this.chooseGrant}
-              {...this.props} />)
+              {...this.props} />)}
+            </TableBody>
+          </Table>
+        </Paper>
+
 
           : <LatestWishes
             chooseGrant={this.chooseGrant}

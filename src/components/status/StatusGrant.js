@@ -45,7 +45,7 @@ export class StatusGrant extends Component {
 
 
         <Paper>
-          <Table >
+          <Table stickyHeader={true}>
             <TableHead>
               <TableRow>
                 <TableCell>Memo</TableCell>

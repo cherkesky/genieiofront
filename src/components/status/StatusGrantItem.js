@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
-import Box from '@material-ui/core/Box'
 import APIManager from '../../modules/APIManager'
 
 import TableRow from '@material-ui/core/TableRow';

@@ -33,7 +33,7 @@ export class Status extends Component {
         <h1>My Wishes</h1>
 
         <Paper >
-          <Table >
+          <Table stickyHeader={true}>
             <TableHead>
               <TableRow>
                 <TableCell>Wish ID</TableCell>
