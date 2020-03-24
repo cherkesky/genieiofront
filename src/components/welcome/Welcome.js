@@ -9,13 +9,7 @@ const styles = {
     flexDirection: "column",
   },
   button: {
-    marginTop: "auto",
-    display: 'flex',
-    background: "#DC42CC",
-    flexDirection: 'column',
-    justifyContent: 'baseline',
-    padding: 30,
-    height: 30,
+    background: "#ff45be",
   },
   front: {
     zIndex: '1',
@@ -37,7 +31,7 @@ export class Welcome extends Component {
             <img alt="logo" src={require("../../assets/logo_nbg.png")} width="380px" height="180px"
             ></img>
           </div>
-          <Button variant="contained" color="secondary" onClick={() => {
+          <Button variant="contained" color="secondary" style={styles.button}  onClick={() => {
             this.props.history.push("/login")
           }}>Login </Button>
           <Button variant="contained" color="default" onClick={() => {
