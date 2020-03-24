@@ -58,15 +58,7 @@ class Login extends Component {
                     style={styles.parent}
                 >
                     <h1>Login</h1>
-                    {/* <fieldset>
-                        <input onChange={(evt) => this.handleInputChange(evt)}
-                            id="username"
-                            type="text"
-                            name="username"
-                            className="form-control"
-                            placeholder="Username"
-                            required autoFocus />
-                    </fieldset> */}
+                   
                     <TextField required
                         id="username"
                         label="username"
@@ -86,23 +78,6 @@ class Login extends Component {
                     }>
                         Login
                   </Button>
-
-                    {/* <fieldset>
-                        <input onChange={this.handleInputChange}
-                            id="password"
-                            type="password"
-                            name="password"
-                            className="form-control"
-                            placeholder="Password"
-                            required />
-                    </fieldset> */}
-
-                    {/* <fieldset>
-                        <button type="submit">
-                            Login
-                    </button>
-                    </fieldset> */}
-
                 </form>
             </>
         )
