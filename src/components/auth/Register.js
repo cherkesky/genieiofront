@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class Register extends Component {
 
@@ -12,7 +14,7 @@ class Register extends Component {
         verifyPassword: ""
     }
 
-    handleInputChange = (evt) => {
+    handleFieldChange = (evt) => {
         let stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
@@ -41,7 +43,7 @@ class Register extends Component {
         return (
             <form className="form--login" onSubmit={this.handleRegister}>
                 <h1>Create Account</h1>
-                <fieldset>
+                {/* <fieldset>
                     <input onChange={(evt) => this.handleInputChange(evt)}
                         id="userName"
                         type="text"
@@ -49,8 +51,15 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Username"
                         required autoFocus />
-                </fieldset>
-                <fieldset>
+                </fieldset> */}
+                <TextField required
+                    id="userName"
+                    label="Username"
+                    type="text"
+                    onChange={this.handleFieldChange}
+                /><br />
+
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="firstName"
                         type="text"
@@ -58,8 +67,14 @@ class Register extends Component {
                         className="form-control"
                         placeholder="First name"
                         required autoFocus />
-                </fieldset>
-                <fieldset>
+                </fieldset> */}
+                <TextField required
+                    id="firstName"
+                    label="First Name"
+                    type="text"
+                    onChange={this.handleFieldChange}
+                /><br />
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="lastName"
                         type="text"
@@ -67,9 +82,14 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Last name"
                         required />
-                </fieldset>
-                <fieldset>
-                    {/* <label htmlFor="location"> location </label> */}
+                </fieldset> */}
+                <TextField required
+                    id="lastName"
+                    label="Last Name"
+                    type="text"
+                    onChange={this.handleFieldChange}
+                /><br />
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="cid"
                         type="text"
@@ -77,9 +97,15 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Phone"
                         required />
-                </fieldset>
-                <fieldset>
-                    {/* <label htmlFor="inputEmail"> Email address </label> */}
+                </fieldset> */}
+                <TextField required
+                    id="cid"
+                    label="Phone Number"
+                    type="text"
+                    onChange={this.handleFieldChange}
+                /><br />
+
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="email"
                         type="email"
@@ -87,8 +113,14 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Email address"
                         required />
-                </fieldset>
-                <fieldset>
+                </fieldset> */}
+                <TextField required
+                    id="email"
+                    label="Email"
+                    type="email"
+                    onChange={this.handleFieldChange}
+                /><br />
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="password"
                         type="password"
@@ -96,8 +128,14 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Password"
                         required />
-                </fieldset>
-                <fieldset>
+                </fieldset> */}
+                <TextField required
+                    id="password"
+                    label="Password"
+                    type="password"
+                    onChange={this.handleFieldChange}
+                /><br />
+                {/* <fieldset>
                     <input onChange={this.handleInputChange}
                         id="verifyPassword"
                         type="password"
@@ -105,12 +143,24 @@ class Register extends Component {
                         className="form-control"
                         placeholder="Verify password"
                         required />
-                </fieldset>
-                <fieldset>
+                </fieldset> */}
+                <TextField required
+                    id="verifyPassword"
+                    label="Password Again"
+                    type="password"
+                    onChange={this.handleFieldChange}
+                /><br /><br />
+                {/* <fieldset>
                     <button type="submit">
                             Register
                     </button>
-                </fieldset>
+                </fieldset> */}
+
+                <Button variant="contained" color="secondary" onClick={
+                    this.handleRegister
+                }>
+                    Register
+                  </Button>
             </form>
         )
     }
