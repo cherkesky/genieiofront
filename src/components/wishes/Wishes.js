@@ -3,6 +3,25 @@ import APIManager from '../../modules/APIManager';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+const styles = {
+  parent: {
+    marginTop: "auto",
+    background: "lightgray",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  button: {
+    marginTop: "auto",
+    display: 'flex',
+    background: "#DC42CC",
+    flexDirection: 'column',
+    justifyContent: 'baseline',
+    padding: 30,
+    height: 30
+  }
+}
+
 export class Wishes extends Component {
 
   state = {
@@ -27,7 +46,8 @@ export class Wishes extends Component {
   }
   render() {
     return (
-      <div>  
+      <div style={styles.parent}>  
+      <h1>Send A Wish</h1>
       <TextField 
         id="composedWish"
         label=""
@@ -38,12 +58,13 @@ export class Wishes extends Component {
         margin="normal"
         variant="outlined"
         fullWidth
+        style={{background: "#FFFFFF"}}
         InputProps={{ style: { fontSize: 100 } }}
         onChange={this.handleFieldChange}
       />
       <hr />
 
-      <Button variant="contained" color="secondary" style={{ background: '#DC42CC' }} onClick={() => {
+      <Button variant="contained" color="secondary" style={styles.button} onClick={() => {
 
         this.handleSend()
       }}>
