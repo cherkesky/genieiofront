@@ -37,21 +37,15 @@ export class StatusGrantItem extends Component {
     return (
       <>
 
-         <Box component="div" display="inline" p={1} m={1} bgcolor="background.paper">
+         {/* <Box component="div" display="inline" p={1} m={1} bgcolor="background.paper"> */}
 
-          <b>Memo:</b> {this.props.grants.memo} <b>Status:</b>{this.props.grants.status}
+          {/* <b>Memo:</b> {this.props.grants.memo} <b>Status:</b>{this.props.grants.status} */}
 
-        {/* <TableRow
-          key={this.props.grants.id}
-          hover={true}
-        >
-          <TableCell component="th" scope="row">
-            {this.props.grants.memo}
-          </TableCell>
-        </TableRow> */}
-
-
-        {(this.props.grants.status) === 'pending'
+        <TableRow key={this.props.grants.id} hover={true} align="center" >
+          <TableCell component="th" scope="row"> {this.props.grants.memo}</TableCell>
+          <TableCell align="center"> {this.props.grants.status} </TableCell>
+          <TableCell align="center"> 
+          {(this.props.grants.status) === 'pending'
           ?
           <>
             <Button
@@ -72,15 +66,12 @@ export class StatusGrantItem extends Component {
                 this.handleGrantReject(this.props.grants.id)
               }}> Reject </Button>
           </>
-          : null
+          : "none"
         }
+         </TableCell>
 
+        </TableRow>
 
-
-
-      </Box> 
-
-      <br /><br />
       </>
     )
   }
