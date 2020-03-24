@@ -40,7 +40,8 @@ export default function WordCloud(props){
   
   return (
     <>
-      <div style={{ height: 650, width: 800, backgroundColor: "#363636" }}>
+      <div style={{ height: 800, width: "100%", backgroundColor: "#363636" }}>
+
         {/* // enable below for using the words fixture file */}
         {/* <ReactWordcloud callbacks={callbacks} words={words} /> */} 
         {/* // enable above for using the words fixture file */}

@@ -3,13 +3,29 @@ import { withRouter } from "react-router-dom"
 import NavBar from './nav/Navbar'
 import ApplicationViews from '../ApplicationViews'
 
+
+const styles = {
+  parent: {
+    marginTop: "auto",
+    background: "lightgray",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  button: {
+    marginTop: "auto",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'baseline',
+    padding: 50,
+    height: 50
+  }
+}
+
 export class GenieIO extends Component {
 
   state = {
-    user: false,
-    // search: "",
-    // searchResults: []
-    
+    user: false,    
   }
 
   isAuthenticated = () => {
@@ -66,7 +82,7 @@ export class GenieIO extends Component {
   }
   render() {
     return (
-      <>
+      <div style={styles.parent}>
           <NavBar
           isAuthenticated={this.isAuthenticated} 
           logoutUser={this.logoutUser}
@@ -76,7 +92,7 @@ export class GenieIO extends Component {
           registerUser={this.registerUser}
           loginUser={this.loginUser}
           />
-      </>
+      </div>
     )
   }
 }

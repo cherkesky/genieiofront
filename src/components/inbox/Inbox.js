@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import Paper from '@material-ui/core/Paper';
 
+
 export class Inbox extends Component {
   state = {
     my_grants: []
@@ -26,6 +27,7 @@ export class Inbox extends Component {
   render() {
     return (
       <>
+        <h1>Inbox</h1>
 
         <Paper>
           <Table stickyHeader={true}>

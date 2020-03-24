@@ -3,6 +3,25 @@ import APIManager from '../../modules/APIManager';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+const styles = {
+  parent: {
+    marginTop: "auto",
+    background: "lightgray",
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  button: {
+    marginTop: "auto",
+    display: 'flex',
+    background: "#DC42CC",
+    flexDirection: 'column',
+    justifyContent: 'baseline',
+    padding: 30,
+    height: 30
+  }
+}
+
 export class GrantMemo extends Component {
 
   state = {
@@ -28,7 +47,7 @@ export class GrantMemo extends Component {
 
 
     APIManager.post("grants",newMemo)
-    .then(this.props.history.push("/home"))
+    .then(this.props.history.push("/status"))
   }
 
   componentDidMount() {
@@ -47,7 +66,6 @@ export class GrantMemo extends Component {
 
     return (
       <>
-        <h1>Grant Memo </h1>
         <p>You chose to grant the wish: <b>{this.state.wish_body}</b></p>
         <p>Please add a personal memo specifying what makes you the right person to grant this wish. </p>
         <TextField
@@ -63,7 +81,7 @@ export class GrantMemo extends Component {
           InputProps={{ style: { fontSize: 100 } }}
           onChange={this.handleFieldChange}
         />
-        <Button variant="contained" color="secondary" style={{background: '#DC42CC'}} 
+        <Button variant="contained" color="secondary" style={styles.button} 
          disabled={!isEnabled}
           onClick={() => {
           this.handleSend()

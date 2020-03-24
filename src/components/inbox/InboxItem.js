@@ -9,7 +9,6 @@ export class InboxItem extends Component {
       <>        
         {(this.props.grants.status==='approved')
         ?
-        <div>
         <TableRow
           key={this.props.grants.id}
           hover={true}
@@ -23,7 +22,6 @@ export class InboxItem extends Component {
            now you can contact your granter at: <b> {this.props.grants.granter.cid} </b>
            </TableCell>
           </TableRow>
-          </div>
 
 
 
