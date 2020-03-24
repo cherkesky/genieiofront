@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
-// import Table from '@material-ui/core/Table';
-// import TableBody from '@material-ui/core/TableBody';
-// import TableCell from '@material-ui/core/TableCell';
-// import TableContainer from '@material-ui/core/TableContainer';
-// import TableHead from '@material-ui/core/TableHead';
-// import TableRow from '@material-ui/core/TableRow';
-// import Paper from '@material-ui/core/Paper';
+import TableRow from '@material-ui/core/TableRow';
+import TableCell from '@material-ui/core/TableCell';
 
 export class StatusWish extends Component {
   render() {
     return (
-      <div>
-        <p>#{this.props.wishes.id} - {this.props.wishes.wish_body}</p>
-      </div>
+      <>
+        <TableRow 
+        key={this.props.wishes.id}
+        hover={true}
+        >
+          <TableCell component="th" scope="row">
+            {this.props.wishes.id}
+          </TableCell>
+          <TableCell align="center">{this.props.wishes.wish_body}</TableCell>
+        </TableRow>
+      </>
     )
   }
 }
