@@ -41,7 +41,7 @@ export class GrantMemo extends Component {
       wish_id: this.state.wish_id,
       wish_body: this.state.wish_body,
       memo: this.state.memo,
-      status: "pending"
+      status: "Pending"
     }
     console.log(newMemo)
 

@@ -39,7 +39,7 @@ export class Grants extends Component {
     search: "",
     searchResults: [],
     chosenGrant: 0,
-    lastBTN: "none"
+    lastBTN: "None"
 
   }
 

@@ -13,7 +13,7 @@ export class StatusGrantItem extends Component {
       .then((grant) => {
         const updatedGrant = {
           id: grant.id,
-          status: "rejected",
+          status: "Rejected",
         }
         APIManager.update("grants", updatedGrant)
         this.props.rerenderer()
@@ -25,7 +25,7 @@ export class StatusGrantItem extends Component {
       .then((grant) => {
         const updatedGrant = {
           id: grant.id,
-          status: "approved",
+          status: "Approved",
         }
         APIManager.update("grants", updatedGrant)
         this.props.rerenderer()
@@ -33,18 +33,16 @@ export class StatusGrantItem extends Component {
   }
 
   render() {
+
     return (
       <>
 
-         {/* <Box component="div" display="inline" p={1} m={1} bgcolor="background.paper"> */}
-
-          {/* <b>Memo:</b> {this.props.grants.memo} <b>Status:</b>{this.props.grants.status} */}
-
         <TableRow key={this.props.grants.id} hover={true} align="center" >
-          <TableCell component="th" scope="row"> {this.props.grants.memo}</TableCell>
+          <TableCell component="th" scope="row"> {(this.props.grants.wish.url).substring(29, 31)}</TableCell>
+          <TableCell align="center"> {this.props.grants.memo} </TableCell>
           <TableCell align="center"> {this.props.grants.status} </TableCell>
           <TableCell align="center"> 
-          {(this.props.grants.status) === 'pending'
+          {(this.props.grants.status) === 'Pending'
           ?
           <>
             <Button
@@ -65,7 +63,7 @@ export class StatusGrantItem extends Component {
                 this.handleGrantReject(this.props.grants.id)
               }}> Reject </Button>
           </>
-          : "none"
+          : "None"
         }
          </TableCell>
 

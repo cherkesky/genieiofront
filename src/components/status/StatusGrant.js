@@ -48,7 +48,8 @@ export class StatusGrant extends Component {
           <Table stickyHeader={true}>
             <TableHead>
               <TableRow>
-                <TableCell>Memo</TableCell>
+                <TableCell>Wish ID</TableCell>
+                <TableCell align="center">Memo</TableCell>
                 <TableCell align="center">Status</TableCell>
                 <TableCell align="center">Action</TableCell>
               </TableRow>
