@@ -59,7 +59,7 @@ export class Wishes extends Component {
         this.setState({ state_short: location.results[0].address_components[5].short_name })
         APIManager.getAll(`locations?get_state=${this.state.state_short}`)
         .then((res)=>{
-          console.log("STATE:", this.state.state_short)
+          console.log("Wisher Location:", this.state.state_short)
           this.setState({locationId: res[0].id})
         })
       })

@@ -12,17 +12,28 @@ export class LatestWishesItem extends Component {
           hover={true}
           align="center">
 
-          <TableCell 
-          component="th"
-           scope="row"
-           onClick={() => {
-            this.props.chooseGrant(this.props.wishes.id)}}
-           >{this.props.wishes.wish_body}</TableCell>
+          <TableCell
+            component="th"
+            scope="row"
+            onClick={() => {
+              this.props.chooseGrant(this.props.wishes.id)
+            }}
+          >{this.props.wishes.wish_body}</TableCell>
 
-          <TableCell 
-          align="center"
-          onClick={() => {
-            this.props.chooseGrant(this.props.wishes.id)}}
+          <TableCell
+            component="th"
+            scope="row"
+            align="center"
+            onClick={() => {
+              this.props.chooseGrant(this.props.wishes.id)
+            }}
+          >{this.props.wishes.location.location}</TableCell>
+
+          <TableCell
+            align="center"
+            onClick={() => {
+              this.props.chooseGrant(this.props.wishes.id)
+            }}
           > {(this.props.wishes.created_at).substring(0, 10)}
           </TableCell>
 

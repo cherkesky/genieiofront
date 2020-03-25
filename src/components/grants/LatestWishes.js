@@ -33,7 +33,9 @@ export class LatestWishes extends Component {
             <TableHead>
               <TableRow>
                 <TableCell>Memo</TableCell>
+                <TableCell align="center">Location</TableCell>
                 <TableCell align="center">Date</TableCell>
+
               </TableRow>
             </TableHead>
             <TableBody>

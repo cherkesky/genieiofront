@@ -19,7 +19,13 @@ export class SearchResults extends Component {
               this.props.chooseGrant(this.props.wishes.id)
             }}
           >{this.props.wishes.wish_body}</TableCell>
-
+          <TableCell
+            align="center"
+            onClick={() => {
+              this.props.chooseGrant(this.props.wishes.id)
+            }}
+          > {this.props.wishes.location.location}
+          </TableCell>
           <TableCell
             align="center"
             onClick={() => {
@@ -28,11 +34,6 @@ export class SearchResults extends Component {
           > {this.props.wishes.created_at.substring(0, 10)}
           </TableCell>
 
-          {/* <p onClick={()=>{
-        this.props.chooseGrant(this.props.wishes.id)
-        }}>
-        
-        {this.props.wishes.wish_body} - {this.props.wishes.created_at}</p> */}
         </TableRow>
 
       </>
