@@ -14,6 +14,8 @@ export class StatusWish extends Component {
             {this.props.wishes.id}
           </TableCell>
           <TableCell align="center">{this.props.wishes.wish_body}</TableCell>
+          <TableCell align="center">{(this.props.wishes.created_at).substring(0, 10)}</TableCell>
+
         </TableRow>
       </>
     )
