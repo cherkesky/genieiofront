@@ -25,7 +25,7 @@ export class SearchResults extends Component {
             onClick={() => {
               this.props.chooseGrant(this.props.wishes.id)
             }}
-          > {this.props.wishes.created_at}
+          > {this.props.wishes.created_at.substring(0, 10)}
           </TableCell>
 
           {/* <p onClick={()=>{
