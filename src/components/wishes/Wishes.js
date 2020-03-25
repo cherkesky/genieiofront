@@ -25,7 +25,10 @@ const styles = {
 export class Wishes extends Component {
 
   state = {
-    composedWish: ''
+    composedWish: '',
+    xCord: 0,
+    yCord: 0,
+    state: [],
   }
 
   handleFieldChange = e => {
@@ -41,14 +44,35 @@ export class Wishes extends Component {
       location: 1
     }
 
-    APIManager.post("wishes",newWish)
-    .then(this.props.history.push("/home"))
+    APIManager.post("wishes", newWish)
+      .then(this.props.history.push("/home"))
   }
-  render() {
-    return (
-      <div style={styles.parent}>  
+
+  displayLocationInfo = (position) => {
+    this.setState({
+      xCord: position.coords.latitude,
+      yCord: position.coords.longitude
+    })
+    APIManager.getLocation(this.state.xCord, this.state.yCord)
+      .then((location) => {
+        this.setState({ state: location.results[0].address_components[5].short_name })
+      })
+  }
+
+
+
+
+componentDidMount(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+  }
+}
+
+render() {
+  return (
+    <div style={styles.parent}>
       <h1>Send A Wish</h1>
-      <TextField 
+      <TextField
         id="composedWish"
         label=""
         placeholder="I wish that..."
@@ -58,7 +82,7 @@ export class Wishes extends Component {
         margin="normal"
         variant="outlined"
         fullWidth
-        style={{background: "#FFFFFF"}}
+        style={{ background: "#FFFFFF" }}
         InputProps={{ style: { fontSize: 100 } }}
         onChange={this.handleFieldChange}
       />
@@ -70,9 +94,9 @@ export class Wishes extends Component {
       }}>
         Send
         </Button>
-        </div>
-    )
-  }
+    </div>
+  )
+}
 }
 
 export default Wishes
