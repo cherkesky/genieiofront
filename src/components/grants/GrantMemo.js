@@ -77,6 +77,7 @@ export class GrantMemo extends Component {
           defaultValue=""
           margin="normal"
           variant="outlined"
+          style={{ background: "#FFFFFF" }}
           fullWidth
           InputProps={{ style: { fontSize: 100 } }}
           onChange={this.handleFieldChange}
