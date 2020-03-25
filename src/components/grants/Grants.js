@@ -111,7 +111,7 @@ export class Grants extends Component {
               <TableHead>
                 <TableRow>
                   <TableCell>Wish</TableCell>
-                  <TableCell align="center">Location</TableCell>
+                  <TableCell align="center">Wisher's Location</TableCell>
                   <TableCell align="center">Date</TableCell>
                 </TableRow>
               </TableHead>
