@@ -28,7 +28,8 @@ export class Wishes extends Component {
     composedWish: '',
     xCord: 0,
     yCord: 0,
-    state: [],
+    state_short: "",
+    locationId: 0
   }
 
   handleFieldChange = e => {
@@ -41,7 +42,7 @@ export class Wishes extends Component {
     const newWish = {
       wish_body: this.state.composedWish,
       category: 1,
-      location: 1
+      location: this.state.locationId
     }
 
     APIManager.post("wishes", newWish)
@@ -55,11 +56,15 @@ export class Wishes extends Component {
     })
     APIManager.getLocation(this.state.xCord, this.state.yCord)
       .then((location) => {
-        this.setState({ state: location.results[0].address_components[5].short_name })
+        this.setState({ state_short: location.results[0].address_components[5].short_name })
+        APIManager.getAll(`locations?get_state=${this.state.state_short}`)
+        .then((res)=>{
+          console.log("STATE:", this.state.state_short)
+          this.setState({locationId: res[0].id})
+        })
       })
+
   }
-
-
 
 
 componentDidMount(){
