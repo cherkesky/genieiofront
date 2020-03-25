@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom"
 import NavBar from './nav/Navbar'
 import ApplicationViews from '../ApplicationViews'
 
+const lamp = require('./art')
 
 const styles = {
   parent: {
@@ -81,6 +82,7 @@ export class GenieIO extends Component {
     this.props.history.push('/');
   }
   render() {
+    console.log(`%c${lamp}`, 'background: #222; color: #EF1CEF')
     return (
       <div style={styles.parent}>
           <NavBar
