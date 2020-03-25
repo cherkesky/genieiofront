@@ -1,3 +1,5 @@
+import apikeys from "../apikeys";
+
 const remoteURL = "http://localhost:8000";
 
 
@@ -66,6 +68,10 @@ export default {
         },
         body: JSON.stringify(object)
     }).then(data => data.json())
+},
+  getLocation (xCord, yCord) {
+  return fetch (`https://maps.googleapis.com/maps/api/geocode/json?latlng=${xCord},${yCord}&key=${apikeys.googleGeocoder}`)
+  .then((result) => result.json());
 }
 };
 

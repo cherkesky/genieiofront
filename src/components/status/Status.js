@@ -38,6 +38,8 @@ export class Status extends Component {
               <TableRow>
                 <TableCell>Wish ID</TableCell>
                 <TableCell align="center">Wish</TableCell>
+                <TableCell align="center">Date</TableCell>
+
               </TableRow>
             </TableHead>
             <TableBody>

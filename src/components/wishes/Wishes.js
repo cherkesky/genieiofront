@@ -25,7 +25,11 @@ const styles = {
 export class Wishes extends Component {
 
   state = {
-    composedWish: ''
+    composedWish: '',
+    xCord: 0,
+    yCord: 0,
+    state_short: "",
+    locationId: 0
   }
 
   handleFieldChange = e => {
@@ -38,17 +42,42 @@ export class Wishes extends Component {
     const newWish = {
       wish_body: this.state.composedWish,
       category: 1,
-      location: 1
+      location: this.state.locationId
     }
 
-    APIManager.post("wishes",newWish)
-    .then(this.props.history.push("/home"))
+    APIManager.post("wishes", newWish)
+      .then(this.props.history.push("/home"))
   }
-  render() {
-    return (
-      <div style={styles.parent}>  
+
+  displayLocationInfo = (position) => {
+    this.setState({
+      xCord: position.coords.latitude,
+      yCord: position.coords.longitude
+    })
+    APIManager.getLocation(this.state.xCord, this.state.yCord)
+      .then((location) => {
+        this.setState({ state_short: location.results[0].address_components[5].short_name })
+        APIManager.getAll(`locations?get_state=${this.state.state_short}`)
+        .then((res)=>{
+          console.log("Wisher Location:", this.state.state_short)
+          this.setState({locationId: res[0].id})
+        })
+      })
+
+  }
+
+
+componentDidMount(){
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+  }
+}
+
+render() {
+  return (
+    <div style={styles.parent}>
       <h1>Send A Wish</h1>
-      <TextField 
+      <TextField
         id="composedWish"
         label=""
         placeholder="I wish that..."
@@ -58,7 +87,7 @@ export class Wishes extends Component {
         margin="normal"
         variant="outlined"
         fullWidth
-        style={{background: "#FFFFFF"}}
+        style={{ background: "#FFFFFF" }}
         InputProps={{ style: { fontSize: 100 } }}
         onChange={this.handleFieldChange}
       />
@@ -70,9 +99,9 @@ export class Wishes extends Component {
       }}>
         Send
         </Button>
-        </div>
-    )
-  }
+    </div>
+  )
+}
 }
 
 export default Wishes

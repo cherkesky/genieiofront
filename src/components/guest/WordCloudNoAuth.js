@@ -27,7 +27,7 @@ export default function WordCloud(props){
         .transition()
         .attr("background", "363636")
         .attr("font-size", isActive ? "300%" : "100%")
-        .attr("text-decoration", isActive ? "underline" : "none");
+        .attr("text-decoration", isActive ? "underline" : "None");
     };
   }
   

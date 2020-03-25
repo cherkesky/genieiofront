@@ -7,7 +7,7 @@ export class InboxItem extends Component {
   render() {
     return (
       <>        
-        {(this.props.grants.status==='approved')
+        {(this.props.grants.status==='Approved')
         ?
         <TableRow
           key={this.props.grants.id}
@@ -30,7 +30,7 @@ export class InboxItem extends Component {
 
 
 
-        : <h3>No messages</h3> 
+        : null
        }
       </>
     )

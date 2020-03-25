@@ -39,7 +39,7 @@ export class Grants extends Component {
     search: "",
     searchResults: [],
     chosenGrant: 0,
-    lastBTN: "none"
+    lastBTN: "None"
 
   }
 
@@ -111,6 +111,7 @@ export class Grants extends Component {
               <TableHead>
                 <TableRow>
                   <TableCell>Wish</TableCell>
+                  <TableCell align="center">Wisher's Location</TableCell>
                   <TableCell align="center">Date</TableCell>
                 </TableRow>
               </TableHead>

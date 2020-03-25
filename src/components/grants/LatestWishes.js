@@ -33,6 +33,7 @@ export class LatestWishes extends Component {
             <TableHead>
               <TableRow>
                 <TableCell>Memo</TableCell>
+                <TableCell align="center">Wisher's Location</TableCell>
                 <TableCell align="center">Date</TableCell>
               </TableRow>
             </TableHead>
@@ -45,12 +46,6 @@ export class LatestWishes extends Component {
             </TableBody>
           </Table>
         </Paper>
-
-        {/* {this.state.wishes.map((wishes) =>
-          <LatestWishesItem
-            key={wishes.id}
-            wishes={wishes}
-            {...this.props} />)} */}
       </>
     )
   }
